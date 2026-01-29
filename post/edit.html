@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit your post - The Modern Muse</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button class="btn-menu" aria-label="Open menu">Menu</button>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/post/create.html">Create</a></li>
+            </ul>
+        </nav>  
+    </header>
+
+    <main>
+        <section class="edit-post">
+            <button class="btn-close" type="button" aria-label="Cancel and return">
+                <img src="/icons/cross-close.png" alt="" aria-hidden="true">
+            </button>
+            <p class="eyebrow">The</p>
+            <h1>Modern Muse</h1>
+            <h2>Edit your post</h2>
+            <form class="edit-form">
+                <div class="form-group">
+                    <label for="post-title">Title:</label>
+                    <input
+                        id="post-title"
+                        name="title"
+                        type="text"
+                        value="Existing post title"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="post-body">Body:</label>
+                    <textarea
+                        id="post-body"
+                        name="body"
+                        rows="8"
+                        required
+                        >Existing post content
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="post-tags">Category:</label>
+                    <input
+                        id="post-tags"
+                        name="tags"
+                        type="text"
+                        placeholder="Select category"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="post-image-url">Image URL:</label>
+                    <input
+                        id="post-image-url"
+                        name="media-url"
+                        type="url"
+                        value="https://example.com/image.jpg"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="post-image-alt">Image description:</label>
+                    <input
+                        id="post-image-alt"
+                        name="media-alt"
+                        type="text"
+                        value="Describe image"
+                    >
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn-delete" type="button" aria-label="Delete this post">Delete</button>
+                    <button type="submit">Update</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; The Modern Muse</p>
+    </footer>
+
+    </body>
+</html>
