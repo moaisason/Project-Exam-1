@@ -1,0 +1,79 @@
+
+/* CSS RESET */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        font-size: 100%;
+        scroll-behavior: smooth;
+    }
+    body {
+        min-height: 100vh;
+        line-height: 1.5;
+        -webkit-font-smoothing: antiliased;
+    }
+    img,
+    picture {
+        max-width: 100%;
+        display: block;
+    }
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+}
+
+
+/* CSS VARIABLES */
+
+:root {
+    /* Colors */
+    --color-primary:  #816388;  /* Plum purple */
+    --color-secondary: #434343;  /* Graphite */
+    --color-accent: #9550A6;  /* Strong lilac */
+    --color-base: #FFFFFF;  /* White */
+    --color-neutral: #F6F2EE;  /* Warm ivory */
+
+    --color-confirm: #57A773;  /* Djungle green */
+    --color-pop: #E27396;  /* Petal pink */
+    --color-alert: #D02463;  /* Rose pink */
+    --color-detail: #D8D1C7;  /* Soft taupe */
+
+    /* Fonts */
+    --font-heading: 'Kalnia', serif;
+    --font-body: 'Raleway' sans-serif;
+    --font-accent: 'Great vibes' serif;
+
+    /* Font sizes */
+    --text-body: 12px;
+    --text-date: 14px;
+    --text-h2: 16px;
+    --text-btn: 20px;
+    --text-h1: 24px;
+    --text-sign: 32px;
+    --text-post: 36px;
+    --text-accent: 40px;
+    --text-xl: 48px;
+    --text-hamburger: 64px;
+
+    /* Spacing */
+    --padding-xs: 8px;
+    --padding-sm: 16px;
+    --padding-md: 24px;
+    --padding-lg: 32px;
+    --padding-xl: 40px;
+
+    /* UI */
+    --radius-circle: 90px;
+
+    --transition-base: 0,3s ease;
+    --transition-fast: 0,2s ease;
+}
