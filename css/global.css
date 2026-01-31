@@ -17,7 +17,7 @@
     body {
         min-height: 100vh;
         line-height: 1.5;
-        -webkit-font-smoothing: antiliased;
+        -webkit-font-smoothing: antialiased; /* Improves font rendering on macOS */
     }
     img,
     picture {
@@ -33,7 +33,6 @@
 
 
 /* CSS VARIABLES */
-
 :root {
     /* Colors */
     --color-primary:  #816388;  /* Plum purple */
@@ -49,20 +48,19 @@
 
     /* Fonts */
     --font-heading: 'Kalnia', serif;
-    --font-body: 'Raleway' sans-serif;
-    --font-accent: 'Great vibes' serif;
+    --font-body: 'Raleway', sans-serif;
+    --font-accent: 'Great Vibes', serif;
 
     /* Font sizes */
-    --text-body: 12px;
-    --text-date: 14px;
-    --text-h2: 16px;
-    --text-btn: 20px;
-    --text-h1: 24px;
-    --text-sign: 32px;
-    --text-post: 36px;
-    --text-accent: 40px;
-    --text-xl: 48px;
-    --text-hamburger: 64px;
+    --text-body: 12px; /* Paragraphs/h3 */
+    --text-date: 14px;  /* Post date */
+    --text-h1: 16px;  /* Subheaders/h2/labels/placeholders */
+    --text-h2: 24px;  /* Quotes */
+    --text-sign: 32px;  /* Author signature */
+    --text-post: 36px;  /* Post header */
+    --text-accent: 40px;  /* accents */
+    --text-xl: 48px;  /* Page header/brand name */
+    --text-hamburger: 64px; /* Categories on hamburger menu */
 
     /* Spacing */
     --padding-xs: 8px;
@@ -72,8 +70,84 @@
     --padding-xl: 40px;
 
     /* UI */
-    --radius-circle: 90px;
+    --radius-circle: 90px;  /* Buttons and form fields */
 
-    --transition-base: 0,3s ease;
-    --transition-fast: 0,2s ease;
+    --transition-base: 0.3s ease;  /* Opening */
+    --transition-fast: 0.2s ease;  /* Closing */
 }
+
+
+/* TYPOGRAPHY */
+    h1, 
+    h2, 
+    h3,
+    p,
+    a,
+    input {
+        font-family: var(--font-body);
+        font-weight: 400;
+    }
+    label,
+    .kalnia {
+        font-family: var(--font-heading);
+    }
+    .great-vibes {
+        font-family: var(--font-accent);
+    }
+    h1 {
+        font-size: var(--text-post);
+    }
+    h2,
+    label,
+    input {
+        font-size: var(--text-h1);
+    }
+    h3,
+    p {
+        font-size: var(--text-body);
+        margin-bottom: var(--padding-sm);
+    }
+    h1,
+    h2,
+    h3,
+    .eyebrow,
+    .upper-case {
+        text-transform: uppercase;
+    }
+    .lower-case {
+        text-transform: none;
+    }
+    input {
+        color: var(--color-secondary) 70%;
+    }
+    .time,
+    .date {
+        font-size: var(--text-date);
+    }
+    .eyebrow {
+        font-family: var(--font-body);
+        font-size: var(--text-body);
+        font-weight: 500;
+        margin-bottom: var(--padding-sm);
+    }
+    .signature,
+    .accent-text {
+        font-family: var(--font-accent);
+        font-size: var(--text-accent);
+    }
+    a {
+        color: var(--color-secondary);
+        text-decoration: none;
+        transition: color var(--transition-fast);
+    }
+    a:hover {
+        color: var(--color-primary);
+    }
+    blockquote {
+        margin: var(--padding-sm) 0;
+    }
+    blockquote p {
+        font-family: var(--font-heading);
+        font-size: var(--text-h2);
+        line-height: 1,3;
+    }
