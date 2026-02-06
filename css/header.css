@@ -34,7 +34,7 @@
         padding: var(--padding-lg);
         position: fixed;
         top: 0;
-        left: 0;
+        right: 0;
         width: 85%;
         max-width: 420px;
         height: 100vh;
@@ -89,4 +89,19 @@
         writing-mode: vertical-lr;
         text-orientation: upright;
         transform: translateY(1px);
+}
+
+/* OVERLAY */
+    .menu-overlay {
+        background: rgba(0, 0, 0, 0.35);
+        opacity: 0;
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 900;
+    }
+    .menu-overlay.is-visible {
+        opacity: 1;
+        pointer-events: auto;
 }
