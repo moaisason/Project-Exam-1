@@ -1,0 +1,92 @@
+
+/* HEADER */
+    header {
+        background-color: var(--color-primary);
+        margin-top: var(--padding-lg);
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--padding-sm) var(--padding-md);
+    }
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+    nav a,
+    .btn-menu {
+        text-transform: uppercase;
+        background: transparent;
+        color: var(--color-neutral);  
+    }
+    nav li a {
+        color: var(--color-neutral);
+        text-decoration: none;
+}
+
+/* PANEL-MENU */
+    .menu-panel {
+        background-color: var(--color-base);
+        padding: var(--padding-lg);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 85%;
+        max-width: 420px;
+        height: 100vh;
+        transform: translateX(100%);
+        transition: transform 0.35s ease;
+        z-index: 1000;
+    }
+    .menu-panel.is-open {
+        transform: translateX(0);
+    }
+    .menu-logo {
+        font-family: var(--font-heading);
+        font-size: var(--text-xl);
+        margin-bottom: var(--padding-lg);
+        display: flex;
+        align-items: flex-start;
+    }
+    .menu-links {
+        list-style: none;
+        flex-direction: column;
+        margin-top: var(--padding-xl);
+        margin-bottom: var(--padding-xl);
+    }
+    .menu-links li {
+        margin-bottom: var(--padding-lg)
+    }
+    .menu-links a {
+        color: var(--color-secondary);
+        font-family: var(--font-heading);
+        font-size: var(--text-hamburger);
+        text-transform: none;
+        line-height: 1;
+    }
+    .menu-panel .btn-close {
+        position: absolute;
+        top: var(--padding-md);
+        right: var(--padding-md);
+    }
+    .logo-text {
+        display: flex;
+        align-items: flex-start;
+        margin-top: var(--padding-xl);
+        margin-bottom: var(--padding-xl);
+    }
+    .logo-text h1 {
+        line-height: 1;
+    }
+    .text-column {
+        font-family: var(--font-body);
+        font-size: 10px;
+        text-transform: uppercase;
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        transform: translateY(1px);
+}

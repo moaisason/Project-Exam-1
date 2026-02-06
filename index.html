@@ -17,10 +17,30 @@
     <header>
         <nav>
             <button class="btn-menu" aria-label="Open menu">Menu</button>
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/account/login.html">Log In</a></li>
-            </ul>
+            <a href="/index.html">Home</a>
+            <a href="/account/login.html">Log In</a>
+
+            <aside class="menu-panel" aria-hidden="true">
+                <button class="btn-close" aria-label="Close menu">
+                    <img src="/icons/cross-close.png" alt="" aria-hidden="true">
+                </button>
+                <div class="logo-text">
+                    <span class="text-column">The</span>
+                    <h1 class="kalnia lower-case">Modern Muse</h1>
+                </div>
+                <ul class="menu-links">
+                    <li><a href="#">Latest posts</a></li>
+                    <li><a href="#">Most popular</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">See all</a></li>
+                </ul>
+                <form class="search-bar">
+                    <input type="search" placeholder="Search">
+                    <button aria-label="Search">
+                        <img src="/icons/looking-glass.png" alt="" aria-hidden="true">
+                    </button>
+                </form>
+            </aside>
         </nav>  
     </header>
 
@@ -28,7 +48,8 @@
         <section>
             <p class="eyebrow">By Her Way Magazine</p>
             <div class="logo-text">
-            <h1 class="text-column">The</h1><h1 class="kalnia lower-case">Modern Muse</h1>
+                <span class="text-column">The</span>
+                <h1 class="kalnia lower-case">Modern Muse</h1>
             </div>
             <p class="tagline">Speaking freely since 2026</p>
             <img src="/images/the-muse.jpg" alt="Happy woman dancing on beach">
