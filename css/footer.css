@@ -2,17 +2,17 @@
 /* FOOTER */
     footer {
         background-color: var(--color-neutral);
-        padding: var(--padding-lg) var(--padding-md);
+        padding: var(--padding-md) var(--padding-sm);
     }
     .footer-content {
         display: grid;
         grid-template-columns: 1fr 1fr auto;
-        gap: var(--padding-lg);
+        gap: var(--padding-md);
         align-items: start;
-        margin-bottom: var(--padding-lg);
+        margin-bottom: var(--padding-md);
     }
     .footer-column h3 {
-        font-size: var(--text-date);
+        font-size: var(--text-h1);
         margin-bottom: var(--padding-sm);
     }
     .footer-column ul {
@@ -32,11 +32,11 @@
         text-align: right;
     }
     .footer-brand .great-vibes {
-        font-size: var(--text-accent);
-        margin-bottom: -4px;
+        font-size: var(--text-post);
+        margin-bottom: -5px;
     }
     .footer-brand .kalnia {
-        font-size: var(--text-date);
+        font-size: var(--text-btn);
     }
     .footer-copy {
         text-align: center;

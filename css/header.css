@@ -76,7 +76,7 @@
     .logo-text {
         display: flex;
         align-items: flex-start;
-        margin-top: var(--padding-xl);
+        margin-top: var(--padding-md);
         margin-bottom: var(--padding-xl);
     }
     .logo-text h1 {

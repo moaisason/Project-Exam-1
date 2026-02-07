@@ -15,7 +15,7 @@
 </head>
 <body>
     <header>
-        <div class="menu-overlay aria-hidden="true"></div>
+        <div class="menu-overlay" aria-hidden="true"></div>
         <nav>
             <button class="btn-menu" aria-label="Open menu">Menu</button>
             <a href="/index.html">Home</a>
@@ -47,38 +47,47 @@
 
     <main>
         <section>
-            <p class="eyebrow">By Her Way Magazine</p>
-            <div class="logo-text">
-                <span class="text-column">The</span>
-                <h1 class="kalnia lower-case">Modern Muse</h1>
+            <div class="main-heading">
+                <p class="eyebrow">By Her Way Magazine</p>
+                <div class="logo-text">
+                    <span class="text-column">The</span>
+                    <h1 class="kalnia lower-case">Modern Muse</h1>
+                </div>
+                <p class="tagline">Speaking freely since 2026</p>
             </div>
-            <p class="tagline">Speaking freely since 2026</p>
             <img src="/images/the-muse.jpg" alt="Happy woman dancing on beach">
-            <p>The Modern Muse is the voice within <a href="#" class="great-vibes">Her Way</a>
-                She is reflective, curious, playful, and honest. She observes, questions, and inspires — without preaching.
-                The Modern Muse is not here to have all the answers. She is here to explore them.
-                Through essays, stories, and personal reflections, the blog captures moments of becoming 
-                — big shifts and quiet realizations alike.
-                She believes inspiration doesn’t come from perfection, but from paying attention.
-            </p>
+            <div class="home-text">
+                <p>The Modern Muse is the voice within <a href="#" class="great-vibes">Her Way</a>
+                </p>
+                <p>She is reflective, curious, playful, and honest. She observes, questions, and inspires — without preaching.
+                    The Modern Muse is not here to have all the answers. She is here to explore them.
+                </p>
+                <p>Through essays, stories, and personal reflections, the blog captures moments of becoming 
+                    — big shifts and quiet realizations alike.
+                </p>
+                <p>She believes inspiration doesn’t come from perfection, but from paying attention.
+                </p>
+            </div>
         </section>
         <section class="carousel">
                 <h2>Latest posts</h2>
-                <article class="post-card">
-                    <img src="#" alt="Post image placeholder">
-                    <h3>Post title</h3>
-                    <p>Post subtitle</p>
-                </article>
-                <article class="post-card">
-                    <img src="#" alt="Post image placeholder">
-                    <h3>Post title</h3>
-                    <p>Post subtitle</p>
-                </article>
-                <article class="post-card">
-                    <img src="#" alt="Post image placeholder">
-                    <h3>Post title</h3>
-                    <p>Post subtitle</p>
-                </article>
+                <div class="carousel-cards">
+                    <article class="post-card">
+                        <img src="#" alt="Post image placeholder">
+                        <h3>Post title</h3>
+                        <p>Post subtitle</p>
+                    </article>
+                    <article class="post-card">
+                        <img src="#" alt="Post image placeholder">
+                        <h3>Post title</h3>
+                        <p>Post subtitle</p>
+                    </article>
+                    <article class="post-card">
+                        <img src="#" alt="Post image placeholder">
+                        <h3>Post title</h3>
+                        <p>Post subtitle</p>
+                    </article>
+                </div>
         </section>
         <section class="click-down-views">
             <h2>Most popular</h2>
@@ -94,9 +103,11 @@
             <img src="/icons/chevron-down.png">
             </button>
         </section>
+
         <section class="home-newsletter">
             <h2 class="kalnia">The Modern Muse</h2>
-            <div>
+            <img src="/images/confetti.jpg" alt="Falling purple confetti">
+            <div class="newsletter-content">
                 <form>
                     <label for="newsletter-email" class="great-vibes">Join the party!</label>
                     <input class="form-field" 
@@ -106,7 +117,6 @@
                         required
                     />
                 </form>
-                <img src="/images/confetti.jpg" alt="Falling purple confetti">
             </div>
         </section>
     </main>
