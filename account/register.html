@@ -13,13 +13,14 @@
 </head>
 
 <body>
-    <main>
+    <main class="register-main">
+        <div class="border">
         <section class="register-card">
             <button class="btn-close" type="button" aria-label="Cancel and return">
                 <img src="/icons/cross-close.png" alt="" aria-hidden="true">
             </button>
             <p class="eyebrow">The</p>
-            <h1>Modern Muse</h1>
+            <h1 class="kalnia">Modern Muse</h1>
             <h2>Create an account</h2>
 
             <form class="register-form">
@@ -43,9 +44,13 @@
                         required
                     >
                 </div>
+                <p>Already a member? Log in 
+                    <a href="/account/login.html" class="great-vibes">here</a>
+                </p>
                 <button class="btn-accent" type="submit">Create</button>
             </form>
         </section>
+        </div>
     </main>
 
     <script type="module" src="/js/ui.js"></script>

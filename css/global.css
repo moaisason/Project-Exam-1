@@ -79,7 +79,6 @@
 
 
 /* TYPOGRAPHY */
-    h1, 
     h2, 
     h3,
     p,
@@ -88,6 +87,7 @@
         font-family: var(--font-body);
         font-weight: 400;
     }
+    h1,
     label,
     .kalnia {
         font-family: var(--font-heading);
@@ -96,7 +96,10 @@
         font-family: var(--font-accent);
     }
     h1 {
-        font-size: var(--text-post);
+        font-size: var(--text-xl);
+        font-weight: 400;
+        position: relative;
+        z-index: 2;
     }
     h2,
     label,
@@ -108,7 +111,6 @@
         font-size: var(--text-body);
         margin-bottom: var(--padding-sm);
     }
-    h1,
     h2,
     h3,
     .eyebrow,
@@ -129,7 +131,7 @@
         font-family: var(--font-body);
         font-size: var(--text-body);
         font-weight: 500;
-        margin-bottom: var(--padding-sm);
+        margin: var(--padding-xs);
     }
     .signature,
     .accent-text {
@@ -181,6 +183,11 @@
     }
     img {
         margin-bottom: var(--padding-md);
+    }
+    section,
+    .card,
+    .border {
+        overflow: visible;
 }
 
 /* BUTTONS */
@@ -255,8 +262,8 @@
         align-self: flex-end;
     }
     .btn-close img {
-        height: 18px;
-        width: 18px;
+        height: 20px;
+        width: 20px;
 }
 
 /* FORMS */
@@ -273,6 +280,9 @@
     select:focus,
     button:focus-visible {
         outline: 2px solid var(--color-accent);
+    }
+    input {
+        min-width: 260px;
     }
     form-hint { 
         font-family: var(--font-body);

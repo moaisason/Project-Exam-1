@@ -70,8 +70,8 @@
     }
     .menu-panel .btn-close {
         position: absolute;
-        top: var(--padding-md);
-        right: var(--padding-md);
+        top: var(--padding-sm);
+        right: var(--padding-sm);
     }
     .logo-text {
         display: flex;
@@ -80,7 +80,7 @@
         margin-bottom: var(--padding-xl);
     }
     .logo-text h1 {
-        line-height: 1;
+        line-height: 0.7;
     }
     .text-column {
         font-family: var(--font-body);

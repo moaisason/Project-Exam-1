@@ -1,0 +1,62 @@
+
+/* REGISTER & LOGIN-PAGE */
+    .register-main,
+    .login-main {
+        background-color: var(--color-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: var(--padding-md);
+    }
+    .border {
+        background-color: var(--color-base);
+        padding: var(--padding-sm);
+        position: relative;
+        overflow: visible;
+    }
+    .btn-close {
+        position: absolute;
+        top: var(--padding-sm);
+        right: var(--padding-sm);
+    }
+    .register-card,
+    .login-card {
+        background-color: var(--color-base);
+        margin: 0 auto;
+        border: solid 2px var(--color-detail);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 48px;
+        gap: var(--padding-md);
+        position: relative;
+        overflow: visible;
+    }
+    .register-card h1,
+    .login-card h1 {
+        position: absolute;
+        width: max-content;
+        top: 65px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .register-form,
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: var(--padding-md);
+    }
+    .register-form .great-vibes,
+    .login-form .great-vibes {
+        font-size: var(--text-btn);
+        margin-top: var(--padding-md);
+    }
+    .register-card .eyebrow,
+    .login-card .eyebrow {
+        padding-bottom: var(--padding-xl);
+    }
+    .btn-accent {
+        margin-top: var(--padding-md);
+}
