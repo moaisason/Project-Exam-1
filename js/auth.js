@@ -47,12 +47,13 @@ async function loginUser(email, password) {
         });
 
         const data = await response.json();
+        console.log("LOGIN RESPONSE:", data);
 
         if (!response.ok) {
             throw new Error(data.errors?.[0]?.message || "Login failed");
         }
 
-        saveToken(data.accessToken);
+        saveToken(data.data.accessToken);
         window.location.href = "/index.html";
 
     }   catch (error) {
