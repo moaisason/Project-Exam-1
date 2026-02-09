@@ -220,7 +220,8 @@
     }
     .btn-accent,
     .btn-edit,
-    .btn-delete {
+    .btn-delete,
+    .btn-logout {
         color: var(--color-base);
         font-size: var(--text-btn);
         border: solid 1px var(--color-secondary);
@@ -239,7 +240,8 @@
     }
     .btn-accent::before,
     .btn-edit::before,
-    .btn-delete::before {
+    .btn-delete::before,
+    .btn-logout::before {
         content: '';
         position: absolute;
         top: -50%;
@@ -253,7 +255,8 @@
     .btn-edit {
         background-color: var(--color-confirm);
     }
-    .btn-delete {
+    .btn-delete,
+    .btn-logout {
         background-color: var(--color-pop);
     }
     .btn-close {

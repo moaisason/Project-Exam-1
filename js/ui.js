@@ -1,3 +1,4 @@
+import { getToken, logout } from "./auth.js";
 
 /* OPEN AND CLOSE ASIDE WITH OVERLAY*/
 const menuButton = document.querySelector('.btn-menu');
@@ -30,3 +31,28 @@ document.addEventListener('keydown', (event) => {
         closeMenu();
     }
 });
+
+/* CHANGE HEADER WHEN LOGGED IN & REDIRECT */
+const authLink = document.querySelector(".nav-auth-link");
+const logoutBtn = document.querySelector(".btn-logout");
+
+const token = getToken();
+
+if (authLink) {
+    if (token) {
+        authLink.textContent = "Create";
+        authLink.href = "/post/create.html";
+    }   else {
+        authLink.textContent = "Log In";
+        authLink.href = "/account/login.html";
+    }
+}
+
+/* SHOW LOGOUT ONLY WHEN LOGGED IN */
+if (logoutBtn) {
+    if (!token) {
+        logoutBtn.style.display = "none";
+    }   else  {
+        logoutBtn.addEventListener("click", logout);
+    }
+}
