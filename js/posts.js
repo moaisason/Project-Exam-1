@@ -99,13 +99,63 @@ function renderPosts(posts) {
         card.classList.add("post-card");
 
         card.innerHTML = `
-        <img src="${post.media?.url || "/images/fallback.jpg"}"
-            alt="${post.media?.alt || post.title}">
-        <h3>${post.title}</h3>
-        <p>${post.body?.slice(0, 80) || ""}...</p>
+        <a href="/post/index.html?id=${post.id}" class="post-link">
+            <img src="${post.media?.url || "/images/fallback.jpg"}"
+                alt="${post.media?.alt || post.title}">
+            <h3>${post.title}</h3>
+            <p>${post.body?.slice(0, 80) || ""}...</p>
+        </a>
         `;
         container.appendChild(card);
     });
 }
 
-fetchPosts();
+
+function getPostIdFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("id");
+}
+
+async function fetchSinglePost() {
+    const postId = getPostIdFromUrl();
+    if (!postId) return;
+
+    try {
+        const response = await fetch(
+            `${API_BASE}/blog/posts/${USERNAME}/${postId}`
+        );
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch post");
+        }
+        renderSinglePost(data.data);
+    }   catch (error) {
+        console.error(error);
+    }
+}
+
+function renderSinglePost(post) {
+    const container = document.querySelector(".blog-post");
+
+    if (!container) return;
+    container.innerHTML = `
+        <header class="post-header">
+        <h1>${post.title}</h1>
+        <img src="${post.media?.url || "/images/fallback.jpg"}"
+            alt="${post.media?.alt || post.title}">
+        </header>
+
+        <section class="post-content">
+            <p>${post.body}</p>
+        </section>
+    `;
+}
+
+if (document.querySelector(".carousel")) {
+    fetchPosts();
+}
+
+if (document.querySelector(".blog-post")) {
+    fetchSinglePost();
+}
