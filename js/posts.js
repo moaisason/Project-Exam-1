@@ -177,11 +177,24 @@ if (document.querySelector(".blog-post")) {
     fetchSinglePost();
 }
 
+/* CONNECT EDIT & DELETE-BUTTON */
 const editForm = document.querySelector(".edit-form");
+const deleteBtn = document.querySelector(".btn-delete");
 
 if (editForm) {
     loadPostForEdit();
     editForm.addEventListener("submit", handleEditPost);
+}
+
+if ("deleteBtn") {
+    deleteBtn.addEventListener("click", () => {
+        const postId = getPostIdFromUrl();
+        if (!postId) return;
+
+        if (confirm("Are you sure you want to delete this post?")) {
+            deletePost(postId);
+        }
+    });
 }
 
 /* GET POST FROM API FOR EDITING */
@@ -261,6 +274,40 @@ async function handleEditPost(e) {
 
         alert("Post updated");
         window.location.href = `/post/index.html?id=${postId}`;
+
+    }   catch (error) {
+        alert(error.message);
+    }
+}
+
+/* DELETING ONE'S OWN POSTS */
+async function deletePost(postId) {
+    const token = getToken();
+
+    /* Check for authorization */
+    if (!token) {
+        alert("You must be logged in.");
+        window.location.href = "/account/login.html";
+        return;
+    }
+
+    try {
+        const response = await fetch(
+            `${API_BASE}/blog/posts/${USERNAME}/${postId}`,
+            {
+                method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error("Failed to delete post");
+        }
+
+        alert("Post deleted");
+        window.location.href = "/index.html";
 
     }   catch (error) {
         alert(error.message);
