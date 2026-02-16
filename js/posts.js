@@ -90,26 +90,31 @@ async function fetchPosts() {
 
 /* SHOW POSTS IN CAROUSEL */
 function renderPosts(posts) {
-    const container = document.querySelector(".carousel");
+    const track = document.querySelector(".carousel-track");
 
-    if (!container) return;
-    container.innerHTML = "<h2>Latest posts</h2>";
-    posts.slice(0, 12).forEach(post => {
+    if (!track) return;
+
+    track.innerHTML = "";
+    posts.slice(0, 12).forEach((post, index) => {
         const card = document.createElement("article");
         card.classList.add("post-card");
+
+        if (index === 1) {
+            card.classList.add("active");
+        }
 
         card.innerHTML = `
         <a href="/post/index.html?id=${post.id}" class="post-link">
             <img src="${post.media?.url || "/images/fallback.jpg"}"
                 alt="${post.media?.alt || post.title}">
-            <h3>${post.title}</h3>
-            <p>${post.body?.slice(0, 80) || ""}...</p>
+            <div class="card-overlay">
+                <h3>${post.title}</h3>
+            </div>
         </a>
         `;
-        container.appendChild(card);
+        track.appendChild(card);
     });
 }
-
 
 function getPostIdFromUrl() {
     const params = new URLSearchParams(window.location.search);
@@ -186,7 +191,7 @@ if (editForm) {
     editForm.addEventListener("submit", handleEditPost);
 }
 
-if ("deleteBtn") {
+if (deleteBtn) {
     deleteBtn.addEventListener("click", () => {
         const postId = getPostIdFromUrl();
         if (!postId) return;
