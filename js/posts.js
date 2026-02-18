@@ -82,6 +82,7 @@ async function fetchPosts() {
             throw new Error("Failed to fetch posts");
         }
         renderPosts(data.data);
+        renderAllPosts(data.data);
 
     }   catch (error) {
         console.error(error);
@@ -113,6 +114,31 @@ function renderPosts(posts) {
         </a>
         `;
         track.appendChild(card);
+    });
+}
+
+/* SHOW POSTS IN SEE ALL VIEW */
+function renderAllPosts(posts) {
+    const list = document.querySelector(".all-posts-list");
+
+    if (!list) return;
+
+    list.innerHTML = "";
+    posts.forEach((post) => {
+        const article = document.createElement("article");
+        article.classList.add("see-all-card");
+
+        article.innerHTML = `
+        <a href="/post/index.html?id=${post.id}" class="post-link">
+            <img src="${post.media?.url || "/images/fallback.jpg"}"
+                alt="${post.media?.alt || post.title}">
+            <div class="card-overlay">
+                <h3>${post.title}</h3>
+                <p>${new Date(post.created).toLocaleDateString()}</p>
+            </div>
+        </a>
+        `;
+        list.appendChild(article);
     });
 }
 

@@ -33,9 +33,9 @@
                     <li><a href="#">See all</a></li>
                 </ul>
                 <button class="btn-logout">Log Out</button>
-                <form class="search-bar">
+                <form class="form-inline">
                     <input type="search" placeholder="Search">
-                    <button aria-label="Search">
+                    <button type="submit" aria-label="Search">
                         <img src="/icons/looking-glass.png" alt="" aria-hidden="true">
                     </button>
                 </form>
@@ -94,20 +94,31 @@
                 <button>
             <img src="/icons/chevron-down.png">
             </button>
+            <section class="dropdown-view see-all-view" hidden>
+                <div class="dropdown-content">
+                    <ul class="all-posts-list"></ul>
+                    <button class="btn-close-view" type="button">
+                        <img src="/icons/chevron-up.png">
+                    </button>
+                </div>
+            </section>
         </section>
 
         <section class="home-newsletter">
             <h2 class="kalnia">The Modern Muse</h2>
             <img src="/images/confetti.jpg" alt="Falling purple confetti">
             <div class="newsletter-content">
-                <form>
-                    <label for="newsletter-email" class="great-vibes">Join the party!</label>
+                <form class="form-inline">
+                    <label for="newsletter-email">Join the party!</label>
                     <input class="form-field" 
                         id="newsletter-email"
                         type="email" 
                         placeholder="Enter your e-mail"
                         required
-                    />
+                    >
+                    <button type="submit" aria-label="Send">
+                        <img src="/icons/letter.png" alt="" aria-hidden="true">
+                    </button>
                 </form>
             </div>
         </section>
@@ -137,9 +148,9 @@
             </div>
         </section>
         <section>
-            <form class="search-bar">
+            <form class="form-inline">
                     <input type="search" placeholder="Search">
-                    <button aria-label="Search">
+                    <button type="submit" aria-label="Search">
                         <img src="/icons/looking-glass.png" alt="" aria-hidden="true">
                     </button>
                 </form>

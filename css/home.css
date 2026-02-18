@@ -76,6 +76,32 @@
         gap: var(--padding-sm);
     }
 
+    /* See all */
+    .all-posts-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: -48px;
+        margin-right: -48px;
+    }
+    .see-all-card {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 1/1;
+    }
+    .see-all-card img {
+        object-fit: cover;
+        display: block;
+    }
+    .see-all-overlay {
+        color: var(--color-secondary);
+        background: rgba(217, 217, 217, 0.75);
+        position: absolute;
+        padding: var(--padding-xs);
+        left: 0;
+        bottom: 0;
+        width: 100%;
+}
+
     /* NEWSLETTER */
     .home-newsletter {
         position: relative;

@@ -56,3 +56,20 @@ if (logoutBtn) {
         logoutBtn.addEventListener("click", logout);
     }
 }
+
+/* OPEN/CLOSE DROPDOWN-VIEWS */
+/* Most popular view */
+/* Categories view */
+/* See all view */
+const seeAllButton = document.querySelector(".click-down-views h2:nth-of-type(3) + button");
+const seeAllView = document.querySelector(".see-all-view");
+const closeViewBtn = document.querySelector(".btn-close-view");
+
+seeAllButton?.addEventListener("click", () => {
+    seeAllView.hidden = false;
+    document.body.style.overflow = "";
+});
+closeViewBtn?.addEventListener("click", () => {
+    seeAllView.hidden = true;
+    document.body.style.overflow = "";
+});
