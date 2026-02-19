@@ -9,20 +9,15 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kalnia:wght@100..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="edit-body">
     <header>
         <div class="menu-overlay" aria-hidden="true"></div>
         <nav>
             <button class="btn-menu" aria-label="Open menu">Menu</button>
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/post/create.html">Create</a></li>
-            </ul>
+            <a href="/index.html">Home</a>
+            <a href="/account/login.html" class="nav-auth-link">Log In</a>
 
             <aside class="menu-panel" aria-hidden="true">
                 <button class="btn-close" aria-label="Close menu">
@@ -37,9 +32,9 @@
                     <li><a href="#">See all</a></li>
                 </ul>
                 <button class="btn-logout">Log Out</button>
-                <form class="search-bar">
+                <form class="form-inline">
                     <input type="search" placeholder="Search">
-                    <button aria-label="Search">
+                    <button type="submit" aria-label="Search">
                         <img src="/icons/looking-glass.png" alt="" aria-hidden="true">
                     </button>
                 </form>
@@ -47,8 +42,9 @@
         </nav>  
     </header>
 
-    <main>
-        <section class="edit-post">
+    <main class="edit-main">
+        <div class="border">
+        <section class="edit-card">
             <button class="btn-close" type="button" aria-label="Cancel and return">
                 <img src="/icons/cross-close.png" alt="" aria-hidden="true">
             </button>
@@ -109,6 +105,7 @@
                 </div>
             </form>
         </section>
+        </div>
     </main>
 
     <footer>

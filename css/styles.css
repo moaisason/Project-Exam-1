@@ -1,7 +1,9 @@
 
-/* REGISTER & LOGIN-PAGE */
+/* REGISTER, LOGIN, CREATE & EDIT PAGE */
     .register-main,
-    .login-main {
+    .login-main,
+    .create-main,
+    .edit-main {
         background-color: var(--color-primary);
         display: flex;
         align-items: center;
@@ -21,7 +23,9 @@
         right: var(--padding-sm);
     }
     .register-card,
-    .login-card {
+    .login-card,
+    .create-card,
+    .edit-card {
         background-color: var(--color-base);
         margin: 0 auto;
         border: solid 2px var(--color-detail);
@@ -34,7 +38,9 @@
         overflow: visible;
     }
     .register-card h1,
-    .login-card h1 {
+    .login-card h1,
+    .create-card h1,
+    .edit-card h1 {
         position: absolute;
         width: max-content;
         top: 65px;
@@ -42,21 +48,57 @@
         transform: translateX(-50%);
     }
     .register-form,
-    .login-form {
+    .login-form,
+    .create-form,
+    .edit-form {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-bottom: var(--padding-md);
     }
     .register-form .great-vibes,
-    .login-form .great-vibes {
+    .login-form .great-vibes,
+    .create-form .great-vibes,
+    .edit-form .great-vibes {
         font-size: var(--text-btn);
         margin-top: var(--padding-md);
     }
     .register-card .eyebrow,
-    .login-card .eyebrow {
+    .login-card .eyebrow,
+    .create-card .eyebrow,
+    .edit-card .eyebrow {
         padding-bottom: var(--padding-xl);
     }
-    .btn-accent {
+    .btn-accent,
+    .btn-edit {
         margin-top: var(--padding-md);
+}
+
+/* REGISTER & LOGIN-PAGE */
+
+/* CREATE & EDIT PAGE */
+    .create-body,
+    .create-main,
+    .edit-body,
+    .edit-main {
+    background-color: var(--color-neutral);
+}
+
+/* POST INDEX PAGE */
+    .blog-post {
+        background: var(--color-base);
+        padding: var(--padding-md) var(--padding-md);
+    }
+    .post-header {
+        background: none;
+    }
+    .post-header,
+    .post-content,
+    .post.actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .blog-post h1 {
+        font-size: var(--text-post);
 }

@@ -9,19 +9,14 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kalnia:wght@100..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="menu-overlay" aria-hidden="true"></div>
         <nav>
             <button class="btn-menu" aria-label="Open menu">Menu</button>
-            <ul class="top-nav">
-                <li><a href="/index.html">Home</a></li>
-                <a href="/account/login.html" class="nav-auth-link">Log In</a>
-            </ul>
+            <a href="/index.html">Home</a>
+            <a href="/account/login.html" class="nav-auth-link">Log In</a>
 
             <aside class="menu-panel" aria-hidden="true">
                 <button class="btn-close" aria-label="Close menu">
@@ -36,9 +31,9 @@
                     <li><a href="#">See all</a></li>
                 </ul>
                 <button class="btn-logout">Log Out</button>
-                <form class="search-bar">
+                <form class="form-inline">
                     <input type="search" placeholder="Search">
-                    <button aria-label="Search">
+                    <button type="submit" aria-label="Search">
                         <img src="/icons/looking-glass.png" alt="" aria-hidden="true">
                     </button>
                 </form>
@@ -76,10 +71,27 @@
             <footer class="post-actions">
                 <p class="post-author">By Author</p>
                 <button aria-label="Share this post">
-                    <img src="/icons/share.png" alt="" aria-hidden="true">
+                    <img src="/icons/paper-plane.png" alt="" aria-hidden="true">
+                </button>
+                <button aria-label="Love this post">
+                    <img src="/icons/heart.png" alt="" aria-hidden="true">
                 </button>
             </footer>
         </article>
+        <section class="newsletter">
+                <form class="form-inline">
+                    <label for="newsletter-email">Join the party!</label>
+                    <input class="form-field" 
+                        id="newsletter-email"
+                        type="email" 
+                        placeholder="Enter your e-mail"
+                        required
+                    >
+                    <button type="submit" aria-label="Send">
+                        <img src="/icons/letter.png" alt="" aria-hidden="true">
+                    </button>
+                </form>
+        </section>
     </main>
 
     <footer>
@@ -106,9 +118,9 @@
             </div>
         </section>
         <div class="footer-search">
-            <form class="search-bar">
+            <form class="form-inline">
                 <input type="search" placeholder="Search">
-                <button aria-label="Search">
+                <button type="submit" aria-label="Search">
                     <img src="/icons/looking-glass.png" alt="" aria-hidden="true">
                 </button>
             </form>

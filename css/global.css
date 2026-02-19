@@ -211,7 +211,8 @@
 }
 
 /* BUTTONS */
-    button {
+    button, 
+    .btn-edit {
         border: none;
         appearance: none;
         border-radius: var(--radius-circle);
@@ -315,17 +316,17 @@
     label {
         padding-left: var(--padding-sm);
     }
-    .search-bar {
+    .form-inline {
         display: flex;
         justify-content: center;
         position: relative;
         width: 100%;
     }
-    .search-bar input {
+    .form-inline input {
         width: 100%;
         padding-right: 44px;
     }
-    .search-bar button {
+    .form-inline button {
         position: absolute;
         top: 50%;
         right: 12px;
@@ -335,7 +336,17 @@
         padding: var(--padding-xs);
         cursor: pointer;
     }
-    .search-bar img {
+    .form-inline img {
         height: 18px;
         width: 20px;
+    }
+    .newsletter-content .form-inline,
+    .newsletter .form-inline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .newsletter-content .form-inline button,
+    .newsletter .form-inline button {
+        transform: translateY(-10%);
 }
