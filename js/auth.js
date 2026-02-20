@@ -25,7 +25,7 @@ async function registerUser(name, email, password) {
         }
 
         alert("Account created! Please log in.");
-        window.location.href = "/account/login.html";
+        window.location.href = "../account/login.html";
 
     }   catch (error) {
         alert(error.message);
@@ -54,7 +54,7 @@ async function loginUser(email, password) {
         }
 
         saveToken(data.data.accessToken);
-        window.location.href = "/index.html";
+        window.location.href = "../index.html";
 
     }   catch (error) {
         alert(error.message);
@@ -70,7 +70,7 @@ export function getToken() {
 }
 export function logout() {
     localStorage.removeItem("accessToken");
-    window.location.href = "/index.html";
+    window.location.href = "../index.html";
 }
 
 /* LISTEN DATA FORMS */

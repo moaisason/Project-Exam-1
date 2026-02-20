@@ -17,7 +17,7 @@ async function handleCreatePost(e) {
     /* Check for authorization */
     if (!token) {
         alert("You must be logged in.");
-        window.location.href = "/account/login.html";
+        window.location.href = "../account/login.html";
         return;
     }
 
@@ -62,7 +62,7 @@ async function handleCreatePost(e) {
         }
 
         alert("Post created");
-        window.location.href = "/index.html";
+        window.location.href = "../index.html";
 
     }   catch (error) {
         alert(error.message);
@@ -259,7 +259,7 @@ async function handleEditPost(e) {
     /* Check for authorization */
     if (!token) {
         alert("You must be logged in.");
-        window.location.href = "/account/login.html";
+        window.location.href = "../account/login.html";
         return;
     }
 
@@ -304,7 +304,7 @@ async function handleEditPost(e) {
         }
 
         alert("Post updated");
-        window.location.href = `/post/index.html?id=${postId}`;
+        window.location.href = `../post/index.html?id=${postId}`;
 
     }   catch (error) {
         alert(error.message);
@@ -318,7 +318,7 @@ async function deletePost(postId) {
     /* Check for authorization */
     if (!token) {
         alert("You must be logged in.");
-        window.location.href = "/account/login.html";
+        window.location.href = "../account/login.html";
         return;
     }
 
@@ -338,7 +338,7 @@ async function deletePost(postId) {
         }
 
         alert("Post deleted");
-        window.location.href = "/index.html";
+        window.location.href = "../index.html";
 
     }   catch (error) {
         alert(error.message);

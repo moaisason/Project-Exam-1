@@ -1,6 +1,6 @@
-import { getToken } from "./auth.js";
+import { getToken } from "../auth.js";
 
 /* REMOVE ACCESS WITHOUT TOKEN */
 if (!getToken()) {
-    window.location.href = "/account/login.html";
+    window.location.href = "../account/login.html";
 }
