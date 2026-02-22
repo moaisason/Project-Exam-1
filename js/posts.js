@@ -1,8 +1,23 @@
-import { getToken } from "./auth.js";
+import { getToken, logout } from "./auth.js";
 /* import { setupInfiniteLoop} from "./carousel.js"; */
 
-/* CREATE A POST */
 const API_BASE = "https://v2.api.noroff.dev";
+
+/* ERROR HELPER */
+function showError(container, message) {
+    if (!container) return;
+
+    container.innerHTML = `
+    <div class="error-message">
+        <p>${message}</p>
+        <a href="../index.html">Back to home</a>
+    </div>
+    `;
+
+    console.error(message);
+}
+
+/* CREATE A POST */
 const createForm = document.querySelector(".create-form");
 const USERNAME = "Moa"
 
@@ -56,6 +71,13 @@ async function handleCreatePost(e) {
 
         const data = await response.json();
 
+        /* Error handling */
+        if (response.status === 401) {
+            logout();
+            alert("Session expired. Please log in again.");
+            return;
+        }
+
         if (!response.ok) {
             throw new Error(
                 data.errors?.[0]?.message || "Failed to create post"
@@ -72,6 +94,13 @@ async function handleCreatePost(e) {
 
 /* GET POSTS FROM API */
 async function fetchPosts() {
+
+    /* Show loading indicator */
+    const track =document.querySelector(".carousel-track");
+    if (track) {
+        track.innerHTML = "<p class='loader'></p>";
+    }
+
     try {
         const response = await fetch(
             `${API_BASE}/blog/posts/${USERNAME}?_sort=created&_order=desc`
@@ -107,7 +136,7 @@ function renderPosts(posts) {
         }
 
         card.innerHTML = `
-        <a href="/post/index.html?id=${post.id}" class="post-link">
+        <a href="post/index.html?id=${post.id}" class="post-link">
             <img src="${post.media?.url || "/images/fallback.jpg"}"
                 alt="${post.media?.alt || post.title}">
             <div class="card-overlay">
@@ -131,7 +160,7 @@ function renderAllPosts(posts) {
         article.classList.add("see-all-card");
 
         article.innerHTML = `
-        <a href="/post/index.html?id=${post.id}" class="post-link">
+        <a href="post/index.html?id=${post.id}" class="post-link">
             <img src="${post.media?.url || "/images/fallback.jpg"}"
                 alt="${post.media?.alt || post.title}">
             <div class="card-overlay">
@@ -152,19 +181,46 @@ function getPostIdFromUrl() {
 /* GET POST FROM API */
 async function fetchSinglePost() {
     const postId = getPostIdFromUrl();
-    if (!postId) return;
+    const container = document.querySelector(".blog-post");
+
+    if (!container) return;
+    
+    /* Show loading indicator */
+    container.innerHTML = `
+        <div class="loader">
+        </div>
+    `;
+
+    if (!postId) {
+        if (container) {
+            container.innerHTML = "<p>Post not found.</p>";
+        }
+        return;
+    }
 
     try {
         const response = await fetch(
             `${API_BASE}/blog/posts/${USERNAME}/${postId}`
         );
-        const data = await response.json();
 
         if (!response.ok) {
-            throw new Error("Failed to fetch post");
+            showError(container, "Failed to fetch post");
+            return;
         }
+
+        const data = await response.json();
         renderSinglePost(data.data);
+        
     }   catch (error) {
+            if (container) {
+                container.innerHTML = `
+                <div class="post-not-found">
+                    <h2>Post not found</h2>
+                    <p>The post you are looking for does not exist.</p>
+                        <a href="../index.html" class="btn-delete">Back to home</a>
+                </div>
+                `;
+            }
         console.error(error);
     }
 }
@@ -207,7 +263,7 @@ function renderSinglePost(post) {
             isOwner
             ?`
             <div class="post-controls">
-                <a href="/post/edit.html?id=${post.id}" class="btn-edit">Edit</a>
+                <a href="edit.html?id=${post.id}" class="btn-edit">Edit</a>
             </div>
             `
             :""
@@ -339,6 +395,13 @@ async function handleEditPost(e) {
 
         const data = await response.json();
 
+        /* Error handling */
+        if (response.status === 401) {
+            logout();
+            alert("Session expired. Please log in again.");
+            return;
+        }
+
         if (!response.ok) {
             throw new Error(
                 data.errors?.[0]?.message || "Failed to update post"
@@ -375,6 +438,13 @@ async function deletePost(postId) {
             }
         );
 
+        /* Error handling */
+        if (response.status === 401) {
+            logout();
+            alert("Session expired. Please log in again.");
+            return;
+        }
+        
         if (!response.ok) {
             throw new Error("Failed to delete post");
         }

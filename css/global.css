@@ -211,7 +211,8 @@
 
 /* BUTTONS */
     button, 
-    .btn-edit {
+    .btn-edit,
+    .btn-delete {
         border: none;
         appearance: none;
         border-radius: var(--radius-circle);
