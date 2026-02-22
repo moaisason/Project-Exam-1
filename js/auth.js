@@ -70,7 +70,7 @@ export function getToken() {
 }
 export function logout() {
     localStorage.removeItem("accessToken");
-    window.location.href = "../index.html";
+    window.location.href = "/Project-Exam-1/";
 }
 
 /* LISTEN DATA FORMS */
