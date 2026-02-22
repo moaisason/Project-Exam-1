@@ -41,10 +41,10 @@ const token = getToken();
 if (authLink) {
     if (token) {
         authLink.textContent = "Create";
-        authLink.href = "post/create.html";
+        authLink.href = "/Project-Exam-1/post/create.html";
     }   else {
         authLink.textContent = "Log In";
-        authLink.href = "account/login.html";
+        authLink.href = "/Project-Exam-1/account/login.html";
     }
 }
 
