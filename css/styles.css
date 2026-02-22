@@ -90,12 +90,13 @@
         background: var(--color-base);
         padding: var(--padding-md) var(--padding-md);
     }
-    .post-header {
+    .post-header,
+    .post-actions {
         background: none;
     }
     .post-header,
     .post-content,
-    .post.actions {
+    .post-actions {
         display: flex;
         flex-direction: column;
         align-items: center;

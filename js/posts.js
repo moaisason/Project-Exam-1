@@ -180,6 +180,9 @@ function renderSinglePost(post) {
     const isOwner = post.author?.name === USERNAME && token;
 
     container.innerHTML = `
+        <p class="post-date">
+            ${new Date(post.created).toLocaleDateString()}
+        </p>
         <header class="post-header">
         <h1>${post.title}</h1>
         <img src="${post.media?.url || "/images/fallback.jpg"}"
@@ -189,6 +192,16 @@ function renderSinglePost(post) {
         <section class="post-content">
             <p>${post.body}</p>
         </section>
+
+        <footer class="post-actions">
+                <p class="post-author">By ${post.author?.name || "Unknown"}</p>
+                <button class="btn-share" aria-label="Share this post">
+                    <img src="../icons/paper-plane.png" alt="" aria-hidden="true">
+                </button>
+                <button aria-label="Love this post">
+                    <img src="../icons/heart.png" alt="" aria-hidden="true">
+                </button>
+            </footer>
         
         ${
             isOwner
@@ -200,6 +213,33 @@ function renderSinglePost(post) {
             :""
         }
     `;
+
+    /* SHARE POST */
+    const shareBtn = document.querySelector(".btn-share");
+
+    if (shareBtn) {
+        shareBtn.addEventListener("click", async () => {
+            const shareUrl = window.location.href;
+
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: document.title,
+                        url: shareUrl
+                    });
+                } catch (error) {
+                    console.error("Share cancelled", error);
+                }
+            } else {
+                try {
+                    await navigator.clipboard.writeText(shareUrl);
+                    alert("Link copied to clipboard!");
+                } catch (error) {
+                    alert("Unable to share link.");
+                }
+            }
+        });
+    }
 }
 
 if (document.querySelector(".carousel")) {
