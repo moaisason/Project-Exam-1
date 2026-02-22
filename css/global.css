@@ -69,6 +69,7 @@
     --padding-md: 24px;
     --padding-lg: 32px;
     --padding-xl: 40px;
+    --padding-xxl: 80px;
 
     /* UI */
     --radius-circle: 90px;  /* Buttons and form fields */
@@ -79,21 +80,21 @@
 
 @font-face {
   font-family: "Raleway";
-  src: url("/fonts/Raleway/raleway-variableFont-wght.ttf") format("truetype");
+  src: url("../fonts/Raleway/raleway-variableFont-wght.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Kalnia";
-  src: url("/fonts/Kalnia/kalnia-variable-font-wdth,wght.ttf") format("truetype");
+  src: url("../fonts/Kalnia/kalnia-variable-font-wdth,wght.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Great Vibes";
-  src: url("/fonts/great-vibes/great-vibes-regular.ttf") format("truetype");
+  src: url("../fonts/great-vibes/great-vibes-regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -151,7 +152,6 @@
         font-family: var(--font-body);
         font-size: var(--text-body);
         font-weight: 500;
-        margin: var(--padding-xs);
     }
     .signature,
     .accent-text {
@@ -181,15 +181,17 @@
         color: var(--color-secondary);
         display: flex;
         flex-direction: column;
+        overflow-x: hidden;
     }
     main {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: var(--padding-md);
     }
     section {
-        padding: var(--padding-lg) var(--padding-md);
-        margin-bottom: var(--padding-xl);
+        margin-top: var(--padding-md);
+        margin-bottom: var(--padding-md);
     }
     .form {
         display: flex;
@@ -200,9 +202,6 @@
         display: flex;
         flex-direction: column;
         padding-bottom: var(--padding-sm);
-    }
-    img {
-        margin-bottom: var(--padding-md);
     }
     section,
     .card,
@@ -330,7 +329,7 @@
         position: absolute;
         top: 50%;
         right: 12px;
-        transform: translateY(-33%);
+        transform: translateY(-50%);
         background: transparent;
         border: none;
         padding: var(--padding-xs);
@@ -348,5 +347,38 @@
     }
     .newsletter-content .form-inline button,
     .newsletter .form-inline button {
-        transform: translateY(-10%);
+        transform: translateY(50%);
+}
+
+
+/* TABLET */
+@media (min-width: 768px) {
+    h2 {
+        font-size: var(--text-h2);
+    }
+    main {
+        padding: var(--padding-md);
+    }
+    section {
+        margin-top: var(--padding-xl);
+        margin-bottom: var(--padding-xl);
+    }
+}
+
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    h2 {
+        font-size: var(--text-btn);
+    }
+    p {
+        font-size: var(--text-date);
+    }
+    main {
+        padding: var(--padding-md) var(--padding-xxl);
+    }
+    section {
+        margin-top: var(--padding-xxl);
+        margin-bottom: var(--padding-xxl);
+    }
 }

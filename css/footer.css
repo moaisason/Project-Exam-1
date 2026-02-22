@@ -2,14 +2,13 @@
 /* FOOTER */
     footer {
         background-color: var(--color-neutral);
-        padding: var(--padding-md) var(--padding-sm);
+        padding: var(--padding-sm);
     }
     .footer-content {
         display: grid;
         grid-template-columns: 1fr 1fr auto;
-        gap: var(--padding-md);
+        gap: var(--padding-sm);
         align-items: start;
-        margin-bottom: var(--padding-md);
     }
     .footer-column h3 {
         font-size: var(--text-h1);
@@ -40,4 +39,26 @@
     }
     .footer-copy {
         text-align: center;
+}
+
+
+/* TABLET */
+@media (min-width: 768px) {
+    footer {
+        padding: var(--padding-lg) var(--padding-xl);
     }
+    .footer-content {
+        gap: var(--padding-lg);
+    }
+}
+
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    footer {
+        padding: var(--padding-xl) var(--padding-xxl);
+    }
+    .footer-content {
+        gap: var(--padding-xl);
+    }
+}

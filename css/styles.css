@@ -32,7 +32,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 48px;
+        padding: 48px var(--padding-md);
         gap: var(--padding-md);
         position: relative;
         overflow: visible;
@@ -72,6 +72,7 @@
     .btn-accent,
     .btn-edit {
         margin-top: var(--padding-md);
+
 }
 
 /* REGISTER & LOGIN-PAGE */
@@ -101,4 +102,58 @@
     }
     .blog-post h1 {
         font-size: var(--text-post);
+    }
+    .blog-post img {
+        padding-top: var(--padding-sm);
+        padding-bottom: var(--padding-md);
+}
+
+
+/* TABLET */
+@media (min-width: 768px) {
+    .register-main,
+    .login-main,
+    .create-main,
+    .edit-main {
+        min-height: 100vh;
+        padding: var(--padding-lg);
+    }
+    .border {
+        padding: var(--padding-md);
+    }
+    .register-card,
+    .login-card,
+    .create-card,
+    .edit-card {
+        padding: 48px var(--padding-xl);
+    }
+    .blog-post img {
+        padding-top: var(--padding-sm);
+        padding-bottom: var(--padding-md);
+    }
+}
+
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .register-main,
+    .login-main,
+    .create-main,
+    .edit-main {
+        min-height: 100vh;
+        padding: var(--padding-xl);
+    }
+    .border {
+        padding: var(--padding-lg);
+    }
+    .register-card,
+    .login-card,
+    .create-card,
+    .edit-card {
+        padding: 48px var(--padding-xxl);
+    }
+    .blog-post img {
+        padding-top: var(--padding-sm);
+        padding-bottom: var(--padding-md);
+    }
 }

@@ -14,8 +14,6 @@
         list-style: none;
         display: flex;
         justify-content: center;
-        margin: 0;
-        padding: 0;
     }
     nav a,
     .btn-menu {
@@ -32,11 +30,12 @@
     .menu-panel {
         background-color: var(--color-base);
         padding: var(--padding-lg);
+        border: solid 2px var(--color-detail);
         position: fixed;
         top: 0;
         right: 0;
-        width: 85%;
-        max-width: 420px;
+        width: 95%;
+        max-width: 594px;
         height: 100vh;
         transform: translateX(100%);
         transition: transform 0.35s ease;
@@ -45,39 +44,12 @@
     .menu-panel.is-open {
         transform: translateX(0);
     }
-    .menu-logo {
+    .logo-text {
         font-family: var(--font-heading);
         font-size: var(--text-xl);
-        margin-bottom: var(--padding-lg);
+        margin: var(--padding-lg) -40px var(--padding-lg) -24px;
         display: flex;
         align-items: flex-start;
-    }
-    .menu-links {
-        list-style: none;
-        flex-direction: column;
-        margin-top: var(--padding-xl);
-        margin-bottom: var(--padding-xl);
-    }
-    .menu-links li {
-        margin-bottom: var(--padding-lg)
-    }
-    .menu-links a {
-        color: var(--color-secondary);
-        font-family: var(--font-heading);
-        font-size: var(--text-hamburger);
-        text-transform: none;
-        line-height: 1;
-    }
-    .menu-panel .btn-close {
-        position: absolute;
-        top: var(--padding-sm);
-        right: var(--padding-sm);
-    }
-    .logo-text {
-        display: flex;
-        align-items: flex-start;
-        margin-top: var(--padding-md);
-        margin-bottom: var(--padding-xl);
     }
     .logo-text h1 {
         line-height: 0.7;
@@ -89,6 +61,31 @@
         writing-mode: vertical-lr;
         text-orientation: upright;
         transform: translateY(1px);
+    }
+    .menu-links {
+        list-style: none;
+        flex-direction: column;
+        margin: var(--padding-xl) -24px;
+    }
+    .menu-links li,
+    .btn-logout {
+        margin-bottom: var(--padding-lg)
+    }
+    .menu-links a {
+        color: var(--color-secondary);
+        font-family: var(--font-heading);
+        font-size: var(--text-hamburger);
+        text-transform: none;
+        line-height: 0.8;
+    }
+    .btn-close {
+        position: absolute;
+        top: var(--padding-sm);
+        right: var(--padding-sm);
+    }
+    .btn-logout {
+        display: flex;
+        align-items: center;
 }
 
 /* OVERLAY */
@@ -104,4 +101,46 @@
     .menu-overlay.is-visible {
         opacity: 1;
         pointer-events: auto;
+}
+
+
+/* TABLET */
+@media (min-width: 768px) {
+    header {
+        margin-top: var(--padding-xl);
+    }
+    nav {
+        justify-content: center;
+        gap: var(--padding-xl);
+        padding: var(--padding-md) var(--padding-xl);
+    }
+    nav a,
+    .btn-menu {
+        font-size: var(--text-btn);
+    }
+    .menu-panel {
+        width: 58%;
+    }
+}
+
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    nav {
+        gap: var(--padding-xxl);
+        padding: var(--padding-lg) var(--padding-xl);
+    }
+    nav a,
+    .btn-menu {
+        font-size: var(--text-h2);
+    }
+    .logo-text {
+        margin: var(--padding-lg) -40px var(--padding-lg) -24px;
+    }
+    .logo-text h1 {
+        font-size: var(--text-hamburger);
+    }
+    .text-column {
+        font-size: 14px;
+    }
 }

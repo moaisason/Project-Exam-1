@@ -7,6 +7,12 @@
         align-items: center;
         justify-content: center;
     }
+    .img-hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: var(--padding-md);
+    }
 
     /* CAROUSEL */
     .carousel {
@@ -39,6 +45,7 @@
     .post-card {
         position: relative;
         height: 150px;
+        width: auto;
         flex: 0 0 calc((100% - 32px) / 3);
         transition: transform 0.3s ease, opacity 0.3s ease;
         scroll-snap-align: center;
@@ -73,7 +80,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: var(--padding-sm);
+        gap: var(--padding-xs);
     }
 
     /* See all */
@@ -100,6 +107,10 @@
         left: 0;
         bottom: 0;
         width: 100%;
+    }
+    .btn-close-view {
+        display: flex;
+        justify-content: center;
 }
 
     /* NEWSLETTER */
@@ -115,7 +126,7 @@
     }
     .home-newsletter img {
         display: block;
-        width: 100vw;
+        opacity: 70%;
         margin-left: 50%;
         transform: translateX(-50%);
     }
@@ -126,7 +137,87 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: var(--padding-md);
     }
     .home-newsletter .great-vibes {
         font-size: var(--text-xl);
+}
+
+
+/* TABLET */
+@media (min-width: 768px) {
+    /* Carousel */
+    .carousel {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .carousel-track {
+        gap: var(--padding-md);
+    }
+    .post-card {
+        height: 300px;
+    }
+    .post-card.active {
+        height: 400px;
+    }
+    /* Click-down views */
+    .all-posts-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--padding-sm);
+        margin-left: -24px;
+        margin-right: -24px;
+    }
+    /* Newsletter */
+    .home-newsletter h2 {
+        font-size: var(--text-hamburger);
+        margin-bottom: -35px;
+    }
+    .newsletter-content {
+        margin-left: var(--padding-xl);
+        margin-right: var(--padding-xl);
+    }
+}
+
+
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    /* Carousel */
+    .carousel-cards {
+        display: flex;
+        align-items: center;
+    }
+    .carousel-track {
+        gap: var(--padding-lg);
+    }
+    .post-card {
+        height: 500px;
+    }
+    .post-card.active {
+        height: 650px;
+    }
+    .carousel-btn {
+        display: flex;
+    }
+    .carousel-btn.prev {
+        left: -15px;
+    }
+    .carousel-btn.next {
+        right: -15px;
+    }
+    /* Click-down views */
+    .all-posts-list {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--padding-md);
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    /* Newsletter */
+    .home-newsletter h2 {
+        font-size: 96px;
+        margin-bottom: -55px;
+    }
+    .newsletter-content {
+        padding: var(--padding-xxl);
+    }
 }
