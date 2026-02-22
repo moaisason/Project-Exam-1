@@ -33,7 +33,7 @@ async function handleCreatePost(e) {
     /* Check for authorization */
     if (!token) {
         alert("You must be logged in.");
-        window.location.href = "../account/login.html";
+        window.location.href = "/Project-Exam-1/account/login.html";
         return;
     }
 
@@ -85,7 +85,7 @@ async function handleCreatePost(e) {
         }
 
         alert("Post created");
-        window.location.href = "../index.html";
+        window.location.href = "/Project-Exam-1/";
 
     }   catch (error) {
         alert(error.message);
