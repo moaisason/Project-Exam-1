@@ -1,4 +1,5 @@
 import { getToken } from "./auth.js";
+/* import { setupInfiniteLoop} from "./carousel.js"; */
 
 /* CREATE A POST */
 const API_BASE = "https://v2.api.noroff.dev";
@@ -82,6 +83,7 @@ async function fetchPosts() {
             throw new Error("Failed to fetch posts");
         }
         renderPosts(data.data);
+        /* setupInfiniteLoop(); */
         renderAllPosts(data.data);
 
     }   catch (error) {
